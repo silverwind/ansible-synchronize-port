@@ -1,0 +1,8 @@
+- hosts: all
+  gather_facts: false
+  tasks:
+    - ansible.builtin.debug:
+        msg: "ansible_port is type {{ ansible_port | type_debug }}"
+    - ansible.posix.synchronize:
+        src: "./"
+        dest: "/opt/app/"
